@@ -1,0 +1,63 @@
+# dev compose
+
+services:
+  redis:
+    hostname: redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+
+  redis_ui:
+    image: rediscommander/redis-commander
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - 4000:8081
+    depends_on:
+      - redis
+
+  mongodb:
+    hostname: mongodb
+    image: mongo
+    restart: always
+    ports:
+      - 27017:27017
+    command: mongod --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_INITDB_DATABASE: auct
+    volumes:
+      - mongodata:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+
+  mongodb_ui:
+    image: huggingface/mongoku
+    ports:
+      - 3000:3100
+    environment:
+      - MONGOKU_DEFAULT_HOST="root:root@mongodb:27017"
+    depends_on:
+      - mongodb
+
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    command: /start-reload.sh
+    volumes:
+      - ./server/:/app/
+    restart: always
+    env_file:
+      - ./server/.env.dev
+    tty: true
+    depends_on:
+      - redis
+      - mongodb
+
+volumes:
+  mongodata:
+    driver: local
