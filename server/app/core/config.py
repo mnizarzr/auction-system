@@ -2,6 +2,7 @@ import os
 
 
 class Config:
+    SECRET_KEY = os.getenv("SECRET_KEY", "e5111e6a35271bd85b116b8156b93e0172180aa830ae468d584e3f22763f2423")
     REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
     REDIS_PORT = os.getenv("REDIS_PORT", 6379)
     REDIS_DB = os.getenv("REDIS_DB", 0)
