@@ -1,22 +1,23 @@
-import bcrypt
 from beanie import Document, Insert, Replace, before_event, PydanticObjectId
-from pydantic import BaseConfig, BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field
+
+from app.utils.auth import get_password_hash
 
 
 class User(Document, BaseModel):
-    """ Beanie Model """
+    """ Beanie Model
+    It's what inserted into mongo database
+    _id autopopulated """
     name: str
     email: EmailStr
     password: str
 
-    class Config(BaseConfig):
-        allow_population_by_alias = True
+    class Settings:
+        name = "users"
 
     @before_event([Insert, Replace])
     def hash_password(self):
-        bytes_pwd = self.password.encode()
-        salt = bcrypt.gensalt()
-        hashed_pwd = bcrypt.hashpw(bytes_pwd, salt)
+        hashed_pwd = get_password_hash(self.password)
         self.password = str(hashed_pwd)
 
 
