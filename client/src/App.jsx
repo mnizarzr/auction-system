@@ -15,9 +15,10 @@ function App() {
   };
 
   return (
-    <div className="App h-screen flex justify-center items-center">
-      <Link to="login">Login</Link> 
-    </div>
+    // <div className="App h-screen flex justify-center items-center">
+    //   <Link to="login">Login</Link> 
+    // </div>
+    window.location.replace('http://localhost:5000/AuctionSystem')
   );
 }
 
