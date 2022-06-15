@@ -11,7 +11,7 @@ db.createUser({
 
 db.createCollection("users");
 
-db.users.update(
+db.admins.update(
     {
         email: "admin@admin.com"
     },
@@ -23,12 +23,32 @@ db.users.update(
     }
 )
 
+db.users.update(
+    {
+        _id: new ObjectId("6294d99eae58b78f9e932ee0"),
+        email: "user@user.com"
+    },
+    {
+        $setOnInsert: {
+            email: "user@user.com",
+            full_name: "Regular User",
+            password: "$2b$12$XqPqDANHbOk1vck1hZAAhefE2wMQBFSiiUF0yl6TVrenNVpCslmRe",
+        }
+    },
+    {
+        upsert: true
+    }
+)
+
 db.categories.insertMany(
     [
         {
             "name": "Art",
             "sub_categories": [
-                { "name": "Drawings" },
+                { 
+                    "_id": new ObjectId(),
+                    "name": "Drawings"
+                },
                 { "name": "Photography" },
                 { "name": "Mixed Media & Collages" },
                 { "name": "Sculptures" },
@@ -68,7 +88,6 @@ db.categories.insertMany(
                 { "name": "Watches" }
             ]
         },
-
         {
             "name": "Collectibles",
             "sub_categories": [
@@ -125,6 +144,55 @@ db.categories.insertMany(
                 { "name": "Vases & Garnitures" },
                 { "name": "Plants" }
             ]
+        }
+    ]
+)
+
+db.items.insertMany(
+    [
+        {
+            "title": "Botol Jihyo",
+            "description": "botol yang pernah dicipok Jihyo",
+            "starting_price": "1000000",
+            "min_increase": "1000",
+            "start_time": "2022-12-12T19:00:00.000Z",
+            "end_time": "2022-12-12T19:05:00.000Z",
+            "created_by": ObjectId("6294d99eae58b78f9e932ee0"),
+            "pictures": [""],
+            "subcategory_id": ""
+        },
+        {
+            "title": "Botol Sana",
+            "description": "botol yang pernah dicipok Sana",
+            "starting_price": "1000000",
+            "min_increase": "1000",
+            "start_time": "2022-12-12T19:00:00.000Z",
+            "end_time": "2022-12-12T19:05:00.000Z",
+            "created_by": ObjectId("6294d99eae58b78f9e932ee0"),
+            "pictures": [""],
+            "subcategory_id": ""
+        },
+        {
+            "title": "Botol Mina",
+            "description": "botol yang pernah dicipok Mina",
+            "starting_price": "1000000",
+            "min_increase": "1000",
+            "start_time": "2022-12-12T19:00:00.000Z",
+            "end_time": "2022-12-12T19:05:00.000Z",
+            "created_by": ObjectId("6294d99eae58b78f9e932ee0"),
+            "pictures": [""],
+            "subcategory_id": ""
+        },
+        {
+            "title": "Botol Chaeyoung",
+            "description": "botol yang pernah dicipok Chaeyoung",
+            "starting_price": "1000000",
+            "min_increase": "1000",
+            "start_time": "2022-12-12T19:00:00.000Z",
+            "end_time": "2022-12-12T19:05:00.000Z",
+            "created_by": ObjectId("6294d99eae58b78f9e932ee0"),
+            "pictures": [""],
+            "subcategory_id": ""
         }
     ]
 )
