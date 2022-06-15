@@ -8,7 +8,7 @@ class User(Document, BaseModel):
     """ Beanie Model
     It's what inserted into mongo database
     _id autopopulated """
-    name: str
+    full_name: str
     email: EmailStr
     password: str
 
@@ -22,7 +22,7 @@ class User(Document, BaseModel):
 
 
 class UserRequest(BaseModel):
-    name: str
+    full_name: str
     email: EmailStr
     password: str
 
@@ -30,5 +30,5 @@ class UserRequest(BaseModel):
 class UserResponse(BaseModel):
     """ DTO """
     id: PydanticObjectId = Field(None, alias="_id")
-    name: str
+    full_name: str
     email: EmailStr

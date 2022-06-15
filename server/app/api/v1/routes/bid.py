@@ -1,15 +1,16 @@
 import typing
 
-from fastapi import APIRouter
 from starlette.endpoints import WebSocketEndpoint
 from starlette.websockets import WebSocket
+from app.services.auth import get_current_user
 
-router = APIRouter()
+
+EVENT_BID = "EVENT_BID"
+EVENT_AUTH = "EVENT_AUTH"
 
 
-@router.websocket_route("/bid", name="bid")
 class BidHub(WebSocketEndpoint):
-    """ Bid hub websocket, handling live bidding """
+    """Bid hub websocket, handling live bidding"""
 
     encoding: str = "json"
 
@@ -17,10 +18,17 @@ class BidHub(WebSocketEndpoint):
         super().__init__(*args, **kwargs)
 
     async def on_connect(self, websocket: WebSocket) -> None:
-        pass
+        await websocket.accept()
 
     async def on_disconnect(self, websocket: WebSocket, close_code: int) -> None:
         pass
 
     async def on_receive(self, websocket: WebSocket, data: typing.Any) -> None:
-        pass
+        if data["type"] == EVENT_AUTH:
+            try:
+                user = await get_current_user(data["payload"]["token"])
+            except Exception:
+                await websocket.close(1001, reason="Forbidden user")
+
+        if data["type"] == EVENT_BID:
+            pass

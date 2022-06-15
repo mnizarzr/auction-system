@@ -2,7 +2,7 @@ from app.models.user import User
 
 
 async def save(user):
-    new_user = User(name=user.name, email=user.email, password=user.password)
+    new_user = User(full_name=user.full_name, email=user.email, password=user.password)
     await new_user.insert()
     return new_user
 

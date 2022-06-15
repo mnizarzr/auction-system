@@ -20,5 +20,5 @@ async def create_user(user: UserRequest):
 
 
 @router.get("/me/", response_model=UserResponse)
-async def read_users_me(current_user: User = Depends(auth_service.get_current_user)):
+async def read_users_me(current_user: User = Depends(auth_service.get_current_user_oauth)):
     return current_user
