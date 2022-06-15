@@ -1,4 +1,12 @@
 [[package]]
+name = "aiofiles"
+version = "0.8.0"
+description = "File support for asyncio."
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[[package]]
 name = "aioredis"
 version = "2.0.1"
 description = "asyncio (PEP 3156) Redis support"
@@ -88,7 +96,7 @@ typecheck = ["mypy"]
 
 [[package]]
 name = "beanie"
-version = "1.11.0"
+version = "1.11.3"
 description = "Asynchronous Python ODM for MongoDB"
 category = "main"
 optional = false
@@ -96,7 +104,7 @@ python-versions = ">=3.7,<4.0"
 
 [package.dependencies]
 click = ">=7"
-motor = ">=2.5,<3.0"
+motor = ">=2.5,<4.0"
 pydantic = ">=1.9.0"
 toml = "*"
 yarl = ">=1.6"
@@ -563,9 +571,13 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "68b436e14ada597f5f81b0be373cc0f0504e990cb1d08cad6e4d668acf7bfbec"
+content-hash = "897532ffb3cfd995fd1ebfdcc4069b04f56a837fa1fdb8a847c6768a571f97e3"
 
 [metadata.files]
+aiofiles = [
+    {file = "aiofiles-0.8.0-py3-none-any.whl", hash = "sha256:7a973fc22b29e9962d0897805ace5856e6a566ab1f0c8e5c91ff6c866519c937"},
+    {file = "aiofiles-0.8.0.tar.gz", hash = "sha256:8334f23235248a3b2e83b2c3a78a22674f39969b96397126cc93664d9a901e59"},
+]
 aioredis = [
     {file = "aioredis-2.0.1-py3-none-any.whl", hash = "sha256:9ac0d0b3b485d293b8ca1987e6de8658d7dafcca1cddfcd1d506cae8cdebfdd6"},
     {file = "aioredis-2.0.1.tar.gz", hash = "sha256:eaa51aaf993f2d71f54b70527c440437ba65340588afeb786cd87c55c89cd98e"},
@@ -604,8 +616,8 @@ bcrypt = [
     {file = "bcrypt-3.2.2.tar.gz", hash = "sha256:433c410c2177057705da2a9f2cd01dd157493b2a7ac14c8593a16b3dab6b6bfb"},
 ]
 beanie = [
-    {file = "beanie-1.11.0-py3-none-any.whl", hash = "sha256:60102e1803bf87f6a96ce06601f6de7770f9825c37b7144717d10254f52cc4e7"},
-    {file = "beanie-1.11.0.tar.gz", hash = "sha256:634a1d0d49bc567340481a13703e8a305cd3f28a475185e1447073e1d42122c3"},
+    {file = "beanie-1.11.3-py3-none-any.whl", hash = "sha256:570f02da519af61d5ce7e67838c1e63b9b0fcbf20d67a99a9c23bbb0830937d7"},
+    {file = "beanie-1.11.3.tar.gz", hash = "sha256:0b163f425b6cf00a1ad3221417049c2fddba1f09bbcde6c59d2273712be24d27"},
 ]
 black = [
     {file = "black-22.3.0-cp310-cp310-macosx_10_9_universal2.whl", hash = "sha256:2497f9c2386572e28921fa8bec7be3e51de6801f7459dffd6e62492531c47e09"},
