@@ -106,28 +106,94 @@ export default function auctionsystem() {
                 </div>
             </div>
 
+            <div class="flex justify-center">
+                <div class="carousel carousel-center rounded-box w-4/6 h-96">
+                    {/* <div id="item1" class="carousel-item w-full">
+                    <img src="https://placeimg.com/800/200/arch" class="w-full" />
+                </div>
+                <div id="item2" class="carousel-item w-full">
+                    <img src="https://placeimg.com/800/200/arch" class="w-full" />
+                </div>
+                <div id="item3" class="carousel-item w-full">
+                    <img src="https://placeimg.com/800/200/arch" class="w-full" />
+                </div>
+                <div id="item4" class="carousel-item w-full">
+                    <img src="https://placeimg.com/800/200/arch" class="w-full" />
+                </div> */}
+                    <div id="item1">
+                        <a href="./Barang">
+                            <div class="card w-1/2 bg-base-100 shadow-xl">
+                                <figure class="px-10 pt-10">
+                                    <img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl" />
+                                </figure>
+                                <div class="card-body items-center text-center">
+                                    <h2 class="card-title">Shoes!</h2>
+                                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="item2">
+                        <a href="./Barang">
+                            <div class="card w-1/2 bg-base-100 shadow-xl">
+                                <figure class="px-10 pt-10">
+                                    <img src="https://placeimg.com/400/225/arch" alt="Teknologi" class="rounded-xl" />
+                                </figure>
+                                <div class="card-body items-center text-center">
+                                    <h2 class="card-title">Teknologi!</h2>
+                                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="item3">
+                        <a href="./Barang">
+                            <div class="card w-1/2 bg-base-100 shadow-xl">
+                                <figure class="px-10 pt-10">
+                                    <img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl" />
+                                </figure>
+                                <div class="card-body items-center text-center">
+                                    <h2 class="card-title">Shoes!</h2>
+                                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div id="item4">
+                        <a href="./Barang">
+                            <div class="card w-1/2 bg-base-100 shadow-xl">
+                                <figure class="px-10 pt-10">
+                                    <img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl" />
+                                </figure>
+                                <div class="card-body items-center text-center">
+                                    <h2 class="card-title">Shoes!</h2>
+                                    <p>If a dog chews shoes whose shoes does he choose?</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center w-full py-2 gap-2">
+                <a href="#item1" class="btn btn-xs">1</a>
+                <a href="#item2" class="btn btn-xs">2</a>
+                <a href="#item3" class="btn btn-xs">3</a>
+                <a href="#item4" class="btn btn-xs">4</a>
+            </div>
+
             {/* <div class="flex justify-center">
-                <div class="w-64 carousel rounded-box">
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=8B7BCDC2" class="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=500B67FB" class="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=A89D0DE6" class="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=225E6693" class="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=9D9539E7" class="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=BDC01094" class="w-full" alt="Tailwind CSS Carousel component" />
-                    </div>
-                    <div class="carousel-item w-full">
-                        <img src="https://api.lorem.space/image/game?w=256&h=400&hash=7F5AE56A" class="w-full" alt="Tailwind CSS Carousel component" />
+                <div class="card w-64 bg-base-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                        <img src="https://placeimg.com/400/225/arch" alt="Shoes" class="rounded-xl" />
+                    </figure>
+                    <div class="card-body items-center text-center">
+                        <h2 class="card-title">Shoes!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions">
+                            <a href="./Barang">
+                                <button class="btn btn-primary">View</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div> */}

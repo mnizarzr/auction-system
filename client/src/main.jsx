@@ -7,6 +7,7 @@ import Login from "./Login";
 import Register from "./Register";
 import Dashboard from "./Dashboard";
 import "./index.css";
+import Barang from "./Barang";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Route path="register" element={<Register />}></Route>
       <Route path="dashboard" element={<Dashboard />}></Route>
       <Route path="auctionsystem" element={<AuctionSystem />}></Route>
+      <Route path="barang" element={<Barang />}></Route>
     </Routes>
   </BrowserRouter>
 );
