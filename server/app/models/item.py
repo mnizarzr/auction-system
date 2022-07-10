@@ -1,7 +1,8 @@
 from datetime import datetime
-from beanie import Document, PydanticObjectId
-from pydantic import BaseModel, validator
 from typing import List, Optional
+
+from beanie import Document, PydanticObjectId
+from pydantic import BaseModel
 
 
 class Item(Document, BaseModel):

@@ -22,6 +22,7 @@ async def authenticate_user(data):
 async def get_current_user_oauth(token: str = Depends(oauth2_scheme)):
     return get_current_user(token)
 
+
 async def get_current_user(token: str):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,

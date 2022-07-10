@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
-from app.api.v1.routes.bid import BidHub
+from app.ws.bidhub import BidHub
 from app.core.db import (
     db,
     connect as connect_mongo,
@@ -33,6 +33,7 @@ async def shutdown_event():
     await disconnect_mongo()
     await disconnect_redis()
 
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -42,4 +43,4 @@ app.add_middleware(
 )
 
 app.include_router(api_router)
-app.add_websocket_route("/ws", BidHub)
+app.add_websocket_route("/bid/{item_id}", BidHub)
