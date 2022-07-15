@@ -15,6 +15,7 @@ beanie = {version = "^1.11.0", extras = ["motor"]}
 passlib = {version = "^1.7.4", extras = ["bcrypt"]}
 python-multipart = "^0.0.5"
 aiofiles = "^0.8.0"
+python-socketio = "^5.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"
