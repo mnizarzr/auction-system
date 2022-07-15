@@ -32,6 +32,18 @@ export default function Barang() {
                          </div>
                     </div>
                </div>
+
+               {/* <div class="h-20"></div> */}
+
+               <div class="py-10 px-20">
+                    <div class="flex w-full grid h-32 card bg-base-300 rounded-box">
+                         {/* <div class="grid h-32 card bg-base-300 rounded-box"></div> */}
+                         <div class="">
+                              Art
+                         </div>
+                    </div>
+               </div>
+
           </body>
      );
 }
