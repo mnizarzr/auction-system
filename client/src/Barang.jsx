@@ -34,18 +34,16 @@ export default function Barang() {
                </div>
 
                <div class="py-10 px-20">
-                    <div class="w-full grid h-32 card bg-base-300 rounded-box">
-                         {/* <div class="grid h-32 card bg-base-300 rounded-box"></div> */}
-                         <div class="flex flex-col">
-                              <ul class="tab text-white text-2xl font-semibold">
-                                   All
-                              </ul>
+                    <div class="w-full h-32 card bg-base-300 rounded-box">
+                         <div class="w-4/6">
+                              All Items
                          </div>
 
-                         <div></div>
+                         <div class="w-2/6">
+                              sort
+                         </div>
                     </div>
                </div>
-
           </body>
      );
 }
