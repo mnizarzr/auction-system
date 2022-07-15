@@ -1,6 +1,6 @@
 import socketio
 from beanie import init_beanie
-from fastapi import FastAPI
+from fastapi import FastAPI, logger
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api.router import api_router
@@ -19,7 +19,7 @@ from app.ws.auction import Auction
 
 app = FastAPI()
 
-sio = socketio.AsyncServer(async_mode="asgi", cors_allowed_origins=["*"])
+sio = socketio.AsyncServer(async_mode="asgi", logger=logger, cors_allowed_origins='*')
 sio_app = socketio.ASGIApp(socketio_server=sio, socketio_path="/")
 sio.register_namespace(Auction("/bid"))
 
