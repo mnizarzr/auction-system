@@ -12,8 +12,8 @@ export default function Barang() {
                          </ul>
                     </div>
 
-                    <div class="dropdown dropdown-end">
-                         <div class="mx-20">
+                    <div class="mx-20">
+                         <div class="dropdown dropdown-left dropdown-hover">
                               <label tabindex="0" class="btn btn-ghost btn-circle avatar">
                                    <div class="w-10 rounded-full">
                                         <img src="https://api.lorem.space/image/face?hash=33791" />
@@ -30,6 +30,12 @@ export default function Barang() {
                                    <li><a>Logout</a></li>
                               </ul>
                          </div>
+                    </div>
+               </div>
+
+               <div class="py-10 px-20">
+                    <div class="w-full h-32 bg-base-300 ">
+                         
                     </div>
                </div>
           </body>
