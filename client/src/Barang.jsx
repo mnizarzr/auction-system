@@ -34,14 +34,8 @@ export default function Barang() {
                </div>
 
                <div class="py-10 px-20">
-                    <div class="w-full h-32 card bg-base-300 rounded-box">
-                         <div class="w-4/6">
-                              All Items
-                         </div>
-
-                         <div class="w-2/6">
-                              sort
-                         </div>
+                    <div class="w-full h-32 bg-base-300 ">
+                         
                     </div>
                </div>
           </body>
