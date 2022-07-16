@@ -10,3 +10,8 @@ async def save(user):
 async def find_user_by_id(user_id):
     user = await User.get(user_id)
     return user
+
+
+async def delete_user(user_id):
+    user = await User.get(user_id)
+    return (await user.delete()).deleted_count > 0

@@ -12,7 +12,6 @@ router = APIRouter()
 
 @router.post("/token", response_model=Token)
 async def retrieve_token(form_data: OAuth2PasswordRequestForm = Depends()):
-    print(form_data)
     user = await auth_service.authenticate_user(form_data)
     if not user:
         raise HTTPException(
